@@ -7,16 +7,17 @@
     android:orientation="vertical"
     tools:context="com.example.john.focused.TestHttp">
 
-    <TextView
-        android:id="@+id/displayTest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
     <Button
         android:id="@+id/sendTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Send" />
+
+    <TextView
+        android:id="@+id/displayTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="24sp" />
 
 </LinearLayout>
