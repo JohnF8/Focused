@@ -5,12 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.john.focused.AddGoal">
+    tools:context="com.example.john.focused.AddGoal"
+    android:background="@drawable/landscape1">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:textSize="20sp"
         android:text="What is your focus of the week" />
 
     <EditText
@@ -24,6 +28,9 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:textSize="20sp"
         android:text="Overview of the week" />
 
     <EditText
@@ -37,6 +44,9 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:textSize="20sp"
         android:text="Why do you want to focus on this goal" />
 
     <EditText
@@ -50,6 +60,9 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:textSize="20sp"
         android:text="How will you accomplish this?" />
 
     <EditText
@@ -63,5 +76,6 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send" />
+        android:text="SEND" />
+
 </LinearLayout>
