@@ -2,141 +2,141 @@ package com.example.john.focused;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
+
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView focus;
+    TextView overview;
+    TextView why;
+    TextView how;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Elements init
+        focus = (TextView) findViewById(R.id.mainFocus);
+        overview = (TextView) findViewById(R.id.mainOverview);
+        why = (TextView) findViewById(R.id.mainWhy);
+        how = (TextView) findViewById(R.id.mainHow);
+
+        new JSONTask().execute("http://54.70.51.182:3000/api/goals/");
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.add, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         int itemClicked = item.getItemId();
-        if(itemClicked ==R.id.add_focus){
+        if (itemClicked == R.id.add_focus) {
             Intent intent = new Intent(MainActivity.this, TestHttp.class);
             startActivity(intent);
         }
         return true;
     }
-}
+
+    public class JSONTask extends AsyncTask<String, String, ArrayList<String> > {
+
+        @Override
+        protected ArrayList<String> doInBackground(String... params) {
+            HttpURLConnection connection = null;
+            BufferedReader reader = null;
+            try {
+                URL url = new URL(params[0]);
+                connection = (HttpURLConnection) url.openConnection();
+                connection.connect();
+
+                InputStream stream = connection.getInputStream();
+                reader = new BufferedReader(new InputStreamReader(stream));
+
+                StringBuffer buffer = new StringBuffer();
+                String line = "";
+
+                while ((line = reader.readLine()) != null) {
+                    buffer.append(line);
+                }
+
+                String receivedJSON = buffer.toString();
+                JSONObject parentObj = new JSONObject(receivedJSON);
+                JSONArray parentArray = parentObj.getJSONArray("goals");
+                //StringBuffer finalData = new StringBuffer();
+                ArrayList<String> finalData = new ArrayList<String>();
+
+                JSONObject finalObject = parentArray.getJSONObject(0);
 
 
+                finalData.add(finalObject.getString("focus"));
+                finalData.add(finalObject.getString("why"));
+                finalData.add(finalObject.getString("how"));
+                finalData.add(finalObject.getString("overview"));
+                //String overview = finalObject.getString("overview");
+                //String why = finalObject.getString("why");
+                //String how=finalObject.getString("how");
+                //String notes = finalObject.getString("progressNotes");
+                //Get the timestamp
 
 
+                return finalData;
 
-
-
-
-/*
-
- * Copyright (C) 2016 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
-
-package com.example.android.datafrominternet.utilities;
-
-        import android.net.Uri;
-
-        import java.io.IOException;
-        import java.io.InputStream;
-        import java.net.HttpURLConnection;
-        import java.net.MalformedURLException;
-        import java.net.URL;
-        import java.util.Scanner;
-
-public class NetworkUtils {
-
-    final static String GITHUB_BASE_URL =
-            "https://api.github.com/search/repositories";
-
-    final static String PARAM_QUERY = "q";
-
-    /*
-     * The sort field. One of stars, forks, or updated.
-     * Default: results are sorted by best match if no field is specified.
-     */
-/*
-    final static String PARAM_SORT = "sort";
-    final static String sortBy = "stars";
-
-    /**
-     * Builds the URL used to query Github.
-     *
-     * @param githubSearchQuery The keyword that will be queried for.
-     * @return The URL to use to query the weather server.
-     */
-/*
-    public static URL buildUrl(String githubSearchQuery) {
-        // COMPLETED (1) Fill in this method to build the proper Github query URL
-        Uri builtUri = Uri.parse(GITHUB_BASE_URL).buildUpon()
-                .appendQueryParameter(PARAM_QUERY, githubSearchQuery)
-                .appendQueryParameter(PARAM_SORT, sortBy)
-                .build();
-
-        URL url = null;
-        try {
-            url = new URL(builtUri.toString());
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-        return url;
-    }
-
-    /**
-     * This method returns the entire result from the HTTP response.
-     *
-     * @param url The URL to fetch the HTTP response from.
-     * @return The contents of the HTTP response.
-     * @throws IOException Related to network and stream reading
-     */
-/*
-    public static String getResponseFromHttpUrl(URL url) throws IOException {
-        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-        try {
-            InputStream in = urlConnection.getInputStream();
-
-            Scanner scanner = new Scanner(in);
-            scanner.useDelimiter("\\A");
-
-            boolean hasInput = scanner.hasNext();
-            if (hasInput) {
-                return scanner.next();
-            } else {
-                return null;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } finally {
+                if (connection != null) {
+                    connection.disconnect();
+                }
+                try {
+                    if (reader != null) {
+                        reader.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-        } finally {
-            urlConnection.disconnect();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<String> finalData) {
+            //super.onPostExecute(finalData);
+           focus.setText(finalData.get(0));
+            overview.setText(finalData.get(1));
+            how.setText(finalData.get(2));
+            why.setText(finalData.get(3));
+            //overview.setText(result);
         }
     }
+
+
 }
- */
+

@@ -24,7 +24,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/mainFocus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Eat healthy"
@@ -32,21 +32,21 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/mainOverview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Over the past weeks, my diet has been really inconsistent"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/mainWhy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="I need to get ready for a race upcoming"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/mainHow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="I will eat more fruits and vegetables 5x a week. I also really want to feel better about my self and because I have a date with a girl and I think I should be fit for that because if I dont then she'll think I am a slob"
