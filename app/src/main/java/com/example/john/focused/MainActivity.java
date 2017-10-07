@@ -44,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
         how = (TextView) findViewById(R.id.mainHow);
 
         new JSONTask().execute("http://54.70.51.182:3000/api/goals/");
+
+        if(focus.getText().equals(null) && overview.getText().equals(null)){
+            focus.setVisibility(TextView.INVISIBLE);
+            overview.setVisibility(TextView.INVISIBLE);
+            why.setVisibility(TextView.INVISIBLE);
+            how.setVisibility(TextView.INVISIBLE);
+        }
     }
 
     @Override
@@ -56,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemClicked = item.getItemId();
         if (itemClicked == R.id.add_focus) {
-            Intent intent = new Intent(MainActivity.this, TestHttp.class);
+            Intent intent = new Intent(MainActivity.this, AddGoal.class);
             startActivity(intent);
         }
         return true;
@@ -78,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
                 StringBuffer buffer = new StringBuffer();
                 String line = "";
-
                 while ((line = reader.readLine()) != null) {
                     buffer.append(line);
                 }
@@ -86,22 +92,16 @@ public class MainActivity extends AppCompatActivity {
                 String receivedJSON = buffer.toString();
                 JSONObject parentObj = new JSONObject(receivedJSON);
                 JSONArray parentArray = parentObj.getJSONArray("goals");
-                //StringBuffer finalData = new StringBuffer();
                 ArrayList<String> finalData = new ArrayList<String>();
 
                 JSONObject finalObject = parentArray.getJSONObject(0);
-
 
                 finalData.add(finalObject.getString("focus"));
                 finalData.add(finalObject.getString("why"));
                 finalData.add(finalObject.getString("how"));
                 finalData.add(finalObject.getString("overview"));
-                //String overview = finalObject.getString("overview");
-                //String why = finalObject.getString("why");
-                //String how=finalObject.getString("how");
-                //String notes = finalObject.getString("progressNotes");
-                //Get the timestamp
 
+                //TODO Get the timestamp and show the correct goal
 
                 return finalData;
 
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
             overview.setText(finalData.get(1));
             how.setText(finalData.get(2));
             why.setText(finalData.get(3));
-            //overview.setText(result);
+
         }
     }
 
