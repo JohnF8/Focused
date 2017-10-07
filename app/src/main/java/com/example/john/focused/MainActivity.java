@@ -128,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(ArrayList<String> finalData) {
-            //super.onPostExecute(finalData);
            focus.setText(finalData.get(0));
             overview.setText(finalData.get(1));
             how.setText(finalData.get(2));
@@ -136,7 +135,5 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
-
 }
 

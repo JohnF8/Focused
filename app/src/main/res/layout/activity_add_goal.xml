@@ -18,7 +18,7 @@
         android:text="What is your focus of the week" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/focusEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -34,7 +34,7 @@
         android:text="Overview of the week" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/overviewEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -50,7 +50,7 @@
         android:text="Why do you want to focus on this goal" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/whyEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -66,14 +66,14 @@
         android:text="How will you accomplish this?" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/howEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textMultiLine" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/postBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SEND" />
