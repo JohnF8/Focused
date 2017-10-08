@@ -33,7 +33,7 @@ import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 
 import static com.example.john.focused.R.id.focusEdit;
 
-public class AddGoal extends Activity implements View.OnClickListener {
+public class AddGoal extends AppCompatActivity implements View.OnClickListener {
 
     EditText focusText, overviewText, whyText, howText;
     Button postBtn;

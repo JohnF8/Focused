@@ -34,7 +34,8 @@ public class settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         listing = (TextView) findViewById(R.id.listTextIt);
-        new displayAllJSON().execute("http://54.70.51.182:3000/api/goals/");
+        listing.setText("Hello");
+        //new displayAllJSON().execute("http://54.70.51.182:3000/api/goals/");
     }
 
     public class displayAllJSON extends AsyncTask<String, Object, String> {
@@ -51,9 +52,7 @@ public class settings extends AppCompatActivity {
                 StringBuffer buffer = new StringBuffer();
                 String line="";
                 while((line=reader.readLine()) != null){
-                    System.out.println("DEBUG");
                     buffer.append(line);
-                    System.out.println("DEBUG");
                 }
                 return buffer.toString();
 

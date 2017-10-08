@@ -11,6 +11,13 @@
         android:id="@+id/listTextIt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="30sp" />
+        android:text="lkasdf"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 </LinearLayout>
