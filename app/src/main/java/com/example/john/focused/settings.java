@@ -34,7 +34,7 @@ public class settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         listing = (TextView) findViewById(R.id.listTextIt);
-        listing.setText("Hello");
+        listing.setText("Strengthen Relationship \n\n Have a few close friends \n Call friends and family more, spend more time with everybody\n\n\n Lose Fat\n\n Decrease body fat percentage\n To hvae more confidence in my body, look better, have a healtheir lifestyle\n Cardio at least 5 days a week, restructive current diet" );
         //new displayAllJSON().execute("http://54.70.51.182:3000/api/goals/");
     }
 
