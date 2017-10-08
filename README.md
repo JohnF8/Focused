@@ -1,3 +1,6 @@
 # Focused
 
-#This is a app that focuses on tracking of ones focus for the week, a productivity app built at Kent Hack Enough 2017. 
+# Productivity and growth focused on chasing after a byweekly focus
+
+Web front-end code: https://github.com/varughese/focusapp-frontend
+Web back-end code: https://github.com/varughese/focusapp-backend
