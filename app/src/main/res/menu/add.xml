@@ -8,4 +8,10 @@
         android:title="Add"
         app:showAsAction="always"
         />
+    <item
+        android:id="@+id/history"
+        android:icon="@drawable/ic_history_black_24dp"
+        android:title="History"
+        app:showAsAction="always"
+        />
 </menu>

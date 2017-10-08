@@ -66,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, AddGoal.class);
             startActivity(intent);
         }
+        if(itemClicked == R.id.history){
+            Intent intent = new Intent(MainActivity.this, settings.class);
+            startActivity(intent);
+        }
         return true;
     }
 
@@ -100,8 +104,6 @@ public class MainActivity extends AppCompatActivity {
                 finalData.add(finalObject.getString("why"));
                 finalData.add(finalObject.getString("how"));
                 finalData.add(finalObject.getString("overview"));
-
-                //TODO Get the timestamp and show the correct goal
 
                 return finalData;
 
