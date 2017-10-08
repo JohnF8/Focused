@@ -17,14 +17,15 @@
         android:text="Focus of the Week?"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:background="?android:attr/colorControlHighlight"/>
+        android:textColor="@android:color/white"/>
 
     <EditText
         android:id="@+id/focusEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textMultiLine"/>
+        android:inputType="textMultiLine"
+        android:textColor="@android:color/white"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -35,14 +36,15 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:text="Overview of this Goal?"
-        android:background="?android:attr/colorControlHighlight"/>
+        android:textColor="@android:color/white"/>
 
     <EditText
         android:id="@+id/overviewEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textMultiLine"/>
+        android:inputType="textMultiLine"
+        android:textColor="@android:color/white"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -53,14 +55,15 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:text="Why Do You Want This Goal?"
-        android:background="?android:attr/colorControlHighlight"/>
+        android:textColor="@android:color/white"/>
 
     <EditText
         android:id="@+id/whyEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:textColor="@android:color/white"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -71,14 +74,15 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:text="How Will You Accomplish This Goal?"
-        android:background="?android:attr/colorControlHighlight"/>
+        android:textColor="@android:color/white"/>
 
     <EditText
         android:id="@+id/howEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textMultiLine"/>
+        android:inputType="textMultiLine"
+        android:textColor="@android:color/white"/>
 
     <Button
         android:id="@+id/postBtn"

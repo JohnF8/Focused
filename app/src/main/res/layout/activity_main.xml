@@ -18,23 +18,13 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:gravity="center"
-                android:textStyle="bold"
-                android:text="Hello"
-                android:textSize="18sp" />
-
-            <TextView
                 android:id="@+id/mainFocus"
                 android:layout_width="match_parent"
                 android:layout_height="68dp"
                 android:text="Goal: Eat Healthy"
                 android:textSize="45sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 tools:gravity="center" />
 
             <TextView
@@ -43,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="Overview:"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -55,6 +45,7 @@
                 android:gravity="center"
                 android:text="Over the past weeks, my diet has been really inconsistent
 "
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
 
             <TextView
@@ -64,7 +55,7 @@
                 android:textStyle="bold"
                 android:gravity="left"
                 android:text="Why:"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="25sp" />
 
             <TextView
@@ -75,6 +66,7 @@
                 android:gravity="center"
                 android:text="I need to get ready for a race upcoming
 "
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
 
             <TextView
@@ -84,7 +76,7 @@
                 android:textStyle="bold"
                 android:gravity="left"
                 android:text="How:"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="25sp" />
 
             <TextView
@@ -95,6 +87,7 @@
                 android:gravity="center"
                 android:text="I will eat more fruits and vegetables 5x a week. I also really want to feel better about my self and because I have a date with a girl and I think I should be fit for that because if I dont then she'll think I am a slob
 "
+                android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>

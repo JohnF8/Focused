@@ -51,7 +51,9 @@ public class settings extends AppCompatActivity {
                 StringBuffer buffer = new StringBuffer();
                 String line="";
                 while((line=reader.readLine()) != null){
+                    System.out.println("DEBUG");
                     buffer.append(line);
+                    System.out.println("DEBUG");
                 }
                 return buffer.toString();
 
@@ -73,20 +75,17 @@ public class settings extends AppCompatActivity {
                 return null;
             }
         }
-
         @Override
         protected void onPostExecute(String result){
             super.onPostExecute(result);
             listing.setText(result);
     }
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.add, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int id=item.getItemId();
@@ -96,5 +95,4 @@ public class settings extends AppCompatActivity {
         }
         return true;
     }
-
 }
