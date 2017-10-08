@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.john.focused.MainActivity">
+    tools:context="com.example.john.focused.MainActivity"
+    android:background="@drawable/landscape2">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,39 +21,80 @@
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Hello John"
-                android:textSize="18sp" />
+                android:textSize="25sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/mainFocus"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Eat healthy"
-                android:textSize="48sp"
+                android:layout_height="68dp"
+                android:text="Goal: Eat Healthy"
+                android:textSize="45sp"
                 android:textStyle="bold"
+                android:textColor="@android:color/black"
                 tools:gravity="center" />
+
+            <TextView
+                android:id="@+id/mainOverviewHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Overview:"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/mainOverview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Over the past weeks, my diet has been really inconsistent"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Over the past weeks, my diet has been really inconsistent
+"
                 android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/mainWhyHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:gravity="left"
+                android:text="Why:"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/mainWhy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="I need to get ready for a race upcoming"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="I need to get ready for a race upcoming
+"
                 android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/mainHowHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:gravity="left"
+                android:text="How:"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/mainHow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="I will eat more fruits and vegetables 5x a week. I also really want to feel better about my self and because I have a date with a girl and I think I should be fit for that because if I dont then she'll think I am a slob"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="I will eat more fruits and vegetables 5x a week. I also really want to feel better about my self and because I have a date with a girl and I think I should be fit for that because if I dont then she'll think I am a slob
+"
                 android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
